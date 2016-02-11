@@ -17,6 +17,10 @@ RateLimit.configure = function(port, host, options) {
     redisClient = redis.createClient(port, host, options);
 };
 
+RateLimit.setRedisClient = function(client) {
+    redisClient = client;
+};
+
 function _checkRedisClient() {
     if(!redisClient)
     {
